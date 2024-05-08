@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 import BotaoNavegacao from "../BotaoNavegacao"
-import ModalCadastroUsuario from "../ModalCadastroUsuario"
 import logo from './assets/logo.png'
 import usuario from './assets/usuario.svg'
 import './BarraNavegacao.css'
+import ModalCadastroUsuario from "../ModalCadastroUsuario"
 
 const BarraNavegacao = () => {
     return (<nav className="ab-navbar">
@@ -54,7 +54,7 @@ const BarraNavegacao = () => {
                     textoAltSrc="Icone representando um usuário"
                     imagemSrc={usuario}
                 />
-                {/* <ModalCadastroUsuario /> */}
+                <ModalCadastroUsuario />
             </li>
         </ul>
     </nav>)
