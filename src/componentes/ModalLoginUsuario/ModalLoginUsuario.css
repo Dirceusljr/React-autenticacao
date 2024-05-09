@@ -1,0 +1,44 @@
+.corpoModalLogin {
+    display: flex;
+    align-items: center;
+    padding: 32px;
+}
+
+.corpoModalLogin form {
+    width: 500px;
+    max-width: 100%;
+}
+
+.corpoModalLogin form footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 17px;
+    align-items: center;
+}
+
+.corpoModalLogin form footer a {
+    color: #002F52;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration-line: underline;
+}
+
+.separadorLogin {
+    margin-top: 48px;
+    background: linear-gradient(98deg, #002F52 35.49%, #326589 165.37%);
+}
+
+.corpoCriarConta {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.corpoCriarConta h2{
+    background: var(--Teste, linear-gradient(98deg, #002F52 35.49%, #326589 165.37%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    font-weight: 700;
+}
