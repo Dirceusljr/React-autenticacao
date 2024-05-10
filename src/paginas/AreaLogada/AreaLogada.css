@@ -1,0 +1,35 @@
+.AreaLogada {
+    display: flex;
+    width: 900px;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.AreaLogada__titulo {
+    padding: 32px 0;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #fff;
+    background: linear-gradient(97.54deg, #002F52 35.49%, #326589 165.37%);
+}
+
+.AreaLogada .navegacao h3 {
+    padding: 12px 36px;
+    text-align: center;
+    border-bottom: 1px solid #0E3E61;
+    font-size: 16px;
+    background: var(--Teste, linear-gradient(98deg, #002F52 35.49%, #326589 165.37%));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.AreaLogada .navegacao li :first-child { 
+    text-decoration: none; 
+    color: #002F52; 
+}
+
+.AreaLogada .conteudo { 
+    flex-grow: 1; 
+}

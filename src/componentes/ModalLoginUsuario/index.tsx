@@ -15,7 +15,7 @@ interface ModalLoginUsuarioProps {
 const ModalLoginUsuario = ({ aberta, aoFechar, aoEfetuarLogin } : ModalLoginUsuarioProps) => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    const token = usePersistirToken();
+    const criarToken = usePersistirToken();
 
     const aoSubmeterFormulario = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault()
@@ -26,10 +26,11 @@ const ModalLoginUsuario = ({ aberta, aoFechar, aoEfetuarLogin } : ModalLoginUsua
 
         axios.post('http://localhost:8000/public/login', usuario)
             .then(resposta => {
-                token(resposta.data.access_token)
+                criarToken(resposta.data.access_token)
                 setEmail('')
                 setSenha('')
                 aoFechar()
+                aoEfetuarLogin()
             })
             .catch(erro => {
                 if(erro?.response?.data?.message){
@@ -66,7 +67,9 @@ const ModalLoginUsuario = ({ aberta, aoFechar, aoEfetuarLogin } : ModalLoginUsua
                     />
                     <footer>
                         <a href="/">Esqueci minha senha</a>
-                        <AbBotao texto='Fazer login' />
+                        <AbBotao 
+                            texto='Fazer login'
+                        />
                     </footer>
                 </form>
                 <hr className='separadorLogin' />
