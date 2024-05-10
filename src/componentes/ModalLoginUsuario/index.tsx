@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import './ModalLoginUsuario.css'
 
 import imagemPrincipal from './assets/login.png'
-import axios from 'axios'
 import { usePersistirToken } from '../../shared/hooks/token'
 import http from '../../http'
 

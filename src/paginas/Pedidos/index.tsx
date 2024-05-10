@@ -1,7 +1,6 @@
 import { AbBotao } from 'ds-alurabooks'
 import './Pedidos.css'
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import { IPedido } from '../../interfaces/IPedido'
 import http from '../../http'
 
