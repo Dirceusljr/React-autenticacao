@@ -3,6 +3,7 @@ import './Pedidos.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { IPedido } from '../../interfaces/IPedido'
+import http from '../../http'
 
 const Pedidos = () => {
 
@@ -11,29 +12,17 @@ const Pedidos = () => {
   const [pedidos, setPedidos] = useState<IPedido[]>([])
   
   useEffect(() => {
-    
-    const token = sessionStorage.getItem('token')
-
-    axios.get<IPedido[]>('http://localhost:8000/pedidos', {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-    .then (resposta => setPedidos(resposta.data))
-    .catch(erro => console.log(erro))
+    http.get<IPedido[]>('pedidos')
+      .then (resposta => setPedidos(resposta.data))
+      .catch(erro => console.log(erro))
   }, [])
 
   const excluirPedido = (pedido: IPedido) => {
-    const token = sessionStorage.getItem('token')
-    axios.delete(`http://localhost:8000/pedidos/${pedido.id}`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-    .then(() => {
-      setPedidos(pedidos.filter(p => p.id !== pedido.id))
-    })
-    .catch(erro => console.log(erro))
+    http.delete(`pedidos/${pedido.id}`)
+      .then(() => {
+        setPedidos(pedidos.filter(p => p.id !== pedido.id))
+      })
+      .catch(erro => console.log(erro))
   }
 
 

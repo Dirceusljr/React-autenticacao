@@ -5,6 +5,7 @@ import './ModalLoginUsuario.css'
 import imagemPrincipal from './assets/login.png'
 import axios from 'axios'
 import { usePersistirToken } from '../../shared/hooks/token'
+import http from '../../http'
 
 interface ModalLoginUsuarioProps {
     aberta: boolean
@@ -24,7 +25,7 @@ const ModalLoginUsuario = ({ aberta, aoFechar, aoEfetuarLogin } : ModalLoginUsua
             senha
         }
 
-        axios.post('http://localhost:8000/public/login', usuario)
+        http.post('public/login', usuario)
             .then(resposta => {
                 criarToken(resposta.data.access_token)
                 setEmail('')
